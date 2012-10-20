@@ -23,6 +23,9 @@
         <script src="js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
     </head>
     <body>
+
+        
+
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
         <![endif]-->
@@ -41,9 +44,9 @@
                     <div class="nav-collapse collapse">
                         <ul class="nav">
                             <li class="active"><a href="#">Home</a></li>
-                            
+
                         </ul>
-                        
+
                     </div><!--/.nav-collapse -->
                 </div>
             </div>
@@ -58,28 +61,36 @@
                     This is a template that shows off some cool features of
                     using Qt to build Hybrid Applications.
                 </p>
-                
+
             </div>
 
             <!-- Example row of columns -->
             <div class="row">
+                
                 <div class="span4">
                     <h2>System Path</h2>
                     <p>
                         Enter a System Path Var:<Br/>
                         <input type="text" id="pathVarEntry" value=""/>
                     </p>
+                    
                     <p><a class="btn" id="systemPathBtn" href="#">Get Path</a></p>
+                    <p>
+                        Result:<Br/>
+                        <textarea id="pathResult"></textarea>
+                    </p>
                 </div>
                 <div class="span4">
-                    <h2>Open a System Dialog</h2>
-                    <p>Hit the button below to open a System File Dialog</p>
-                    <p><a class="btn" id="systemDialogBtn" href="#">Open</a></p>
+                    <h2>Send a Message</h2>
+                    <p>
+                        Enter a Value:<Br/>
+                        <input type="text" id="valEntry" value=""/>
+                    </p>
+                    <p><a class="btn" id="systemMessageBtn" href="#">Change</a></p>
                 </div>
                 <div class="span4">
-                    <h2>Other Thing</h2>
-                    <p>This does something else!</p>
-                    <p><a class="btn" id="otherBtn" href="#">View Things!</a></p>
+                    <h2>Interact!</h2>
+                    <p>Using a web app to interact with the system is really neat, right?</p>
                 </div>
             </div>
 
@@ -98,5 +109,24 @@
 
         <script src="js/main.js"></script>
 
+        <script>
+            $(document).ready(function() {
+                $('#systemPathBtn').click(function() {
+                    var pathVar = $("#pathVarEntry").val();
+                    var pathResult = exposedObject.GetSystemVariable(pathVar);
+                    $('#pathResult').html(pathResult);
+                });
+                
+                $('#systemMessageBtn').click(function() {
+                    var message = $("#valEntry").val();
+                    exposedObject.ChangeValue(message);
+                });
+            
+                exposedObject.valueChanged.connect(systemNotifier.DisplayNotification);
+            
+            });
+            
+        </script>
+        
     </body>
 </html>
