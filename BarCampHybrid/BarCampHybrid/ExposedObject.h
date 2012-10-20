@@ -14,11 +14,11 @@ public:
 
 	Q_INVOKABLE QString GetSystemVariable(QString varName);
 
-	Q_INVOKABLE void ChangeValue(int val);
+	Q_INVOKABLE void ChangeValue(QString val);
 
-	Q_SIGNAL void ValueChanged(int value);
+	Q_SIGNAL void ValueChanged(QString value);
 protected:
 
 	QString m_SystemVariableContents;
-	int m_Value;
+	QString m_Value;
 };
