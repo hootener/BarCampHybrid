@@ -14,6 +14,7 @@ public:
 	Q_SLOT void LoadUrl(QString url);
 	Q_SLOT void LoadHome();
 	Q_SLOT void RefreshPage();
+	Q_SLOT void SendObjectToPage(QString objectName, QObject * pObject);
 
 protected:
 	QString m_CurrentUrl;

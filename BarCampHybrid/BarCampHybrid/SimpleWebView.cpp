@@ -5,6 +5,7 @@
 #include <QApplication>
 #include <QWebInspector>
 #include <QDebug>
+#include <QWebFrame>
 
 // Application Includes
 #include "SimpleWebView.h"
@@ -53,4 +54,10 @@ void SimpleWebView::UpdateOnPageLoad(bool ok){
 	if(m_pWebInspector->isVisible()){ 
 		m_pWebInspector->setPage(this->page());
 	}
+}
+
+void SimpleWebView::SendObjectToPage(QString objectName, QObject * pObject){
+	//get the active page.
+	QWebFrame * pWebFrame = this->page()->mainFrame();
+	pWebFrame->addToJavaScriptWindowObject(objectName, pObject);
 }

@@ -68,11 +68,13 @@ nmake release-clean</NMakeCleanCommandLine>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainWindow.cpp" />
     <ClCompile Include="SimpleWebView.cpp" />
+    <ClCompile Include="SystemNotifier.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ExposedObject.h" />
     <ClInclude Include="MainWindow.h" />
     <ClInclude Include="SimpleWebView.h" />
+    <ClInclude Include="SystemNotifier.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

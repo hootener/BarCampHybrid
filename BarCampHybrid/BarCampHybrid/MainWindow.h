@@ -9,6 +9,7 @@ class SimpleWebView;
 class QProgressBar;
 class QLabel;
 class ExposedObject;
+class SystemNotifier;
 
 class MainWindow: public QMainWindow{
 	Q_OBJECT
@@ -18,6 +19,15 @@ protected:
 	QLineEdit * m_pUrlLineEdit;
 	Q_SLOT void GoToUrl();
 	SimpleWebView * m_pWebView;
+
+	ExposedObject * m_pExposedObject;
+	SystemNotifier * m_pSystemNotifier;
+
+	/*!
+	* connected to the web views loaded signal so that these objects
+	* are sent to the web page on page load.
+	*/
+	Q_SLOT void SendQObjectsToWebFrame(bool ok);
 	
 	/*!
 	* For showing status messages in the status bar.
