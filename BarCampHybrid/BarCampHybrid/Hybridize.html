@@ -113,12 +113,14 @@
             $(document).ready(function() {
                 $('#systemPathBtn').click(function() {
                     var pathVar = $("#pathVarEntry").val();
+                    console.log("PathVar: "+pathVar);
                     var pathResult = exposedObject.GetSystemVariable(pathVar);
                     $('#pathResult').html(pathResult);
                 });
                 
                 $('#systemMessageBtn').click(function() {
                     var message = $("#valEntry").val();
+                    console.log("Message "+message);
                     exposedObject.ChangeValue(message);
                 });
             
