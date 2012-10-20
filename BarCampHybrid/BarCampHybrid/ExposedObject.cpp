@@ -4,7 +4,7 @@
 #include "ExposedObject.h"
 
 ExposedObject::ExposedObject(QObject * pParent):QObject(pParent),
-m_Value(0),
+m_Value("Not Set"),
 m_SystemVariableContents("Not set"){
 
 }
@@ -39,7 +39,7 @@ QString ExposedObject::GetSystemVariable(QString varName){
 	return envVarPath;
 }
 
-void ExposedObject::ChangeValue(int value){
+void ExposedObject::ChangeValue(QString value){
 	m_Value = value;
 	Q_EMIT(ValueChanged(value));
 }
