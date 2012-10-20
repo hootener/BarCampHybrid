@@ -48,6 +48,7 @@ MainWindow::MainWindow(QWidget * pParent):QMainWindow(pParent){
 	m_pSystemNotifier->show();
 	//connect the slots we need
 	connect(m_pWebView,SIGNAL(loadFinished(bool)), this, SLOT(SendQObjectsToWebFrame(bool)));
+	connect(m_pExposedObject, SIGNAL(ValueChanged(QString)),m_pSystemNotifier,SLOT(DisplayNotification(QString)));
 
 }
 

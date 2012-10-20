@@ -110,7 +110,7 @@
         <script src="js/main.js"></script>
 
         <script>
-            $(document).ready(function() {
+            $(document).ready(function () {
                 $('#systemPathBtn').click(function() {
                     var pathVar = $("#pathVarEntry").val();
                     console.log("PathVar: "+pathVar);
@@ -123,9 +123,8 @@
                     console.log("Message "+message);
                     exposedObject.ChangeValue(message);
                 });
-            
-                exposedObject.valueChanged.connect(systemNotifier.DisplayNotification);
-            
+
+               // exposedObject.ValueChanged.connect(systemNotifier.DisplayNotification);
             });
             
         </script>

@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'ExposedObject.h'
 **
-** Created: Fri Oct 19 21:03:17 2012
+** Created: Fri Oct 19 21:55:21 2012
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.2)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -34,16 +34,16 @@ static const uint qt_meta_data_ExposedObject[] = {
       21,   15,   14,   14, 0x06,
 
  // methods: signature, parameters, type, tag, flags
-      55,   47,   39,   14, 0x02,
-      86,   82,   14,   14, 0x02,
+      59,   51,   43,   14, 0x02,
+      90,   86,   14,   14, 0x02,
 
        0        // eod
 };
 
 static const char qt_meta_stringdata_ExposedObject[] = {
-    "ExposedObject\0\0value\0ValueChanged(int)\0"
+    "ExposedObject\0\0value\0ValueChanged(QString)\0"
     "QString\0varName\0GetSystemVariable(QString)\0"
-    "val\0ChangeValue(int)\0"
+    "val\0ChangeValue(QString)\0"
 };
 
 void ExposedObject::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
@@ -52,10 +52,10 @@ void ExposedObject::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
         Q_ASSERT(staticMetaObject.cast(_o));
         ExposedObject *_t = static_cast<ExposedObject *>(_o);
         switch (_id) {
-        case 0: _t->ValueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 0: _t->ValueChanged((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 1: { QString _r = _t->GetSystemVariable((*reinterpret_cast< QString(*)>(_a[1])));
             if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = _r; }  break;
-        case 2: _t->ChangeValue((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 2: _t->ChangeValue((*reinterpret_cast< QString(*)>(_a[1]))); break;
         default: ;
         }
     }
@@ -101,7 +101,7 @@ int ExposedObject::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 }
 
 // SIGNAL 0
-void ExposedObject::ValueChanged(int _t1)
+void ExposedObject::ValueChanged(QString _t1)
 {
     void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 0, _a);

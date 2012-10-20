@@ -6,5 +6,5 @@ SystemNotifier::SystemNotifier(QObject * pParent): QSystemTrayIcon(pParent){
 }
 
 void SystemNotifier::DisplayNotification(QString message){
-	setToolTip(message);
+	showMessage("Hybrid App Test", message);
 }
