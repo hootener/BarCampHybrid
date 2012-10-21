@@ -6,7 +6,6 @@
 ExposedObject::ExposedObject(QObject * pParent):QObject(pParent),
 m_Value("Not Set"),
 m_SystemVariableContents("Not set"){
-
 }
 
 
